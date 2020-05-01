@@ -1,4 +1,4 @@
-package redJpa.util;
+package jpa.util;
 
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 
-import redJpa.entities.Usuario;
+import jpa.entities.Usuario;
 
 public class MainApp {
 

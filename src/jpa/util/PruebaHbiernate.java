@@ -1,11 +1,11 @@
-package redJpa.util;
+package jpa.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import hibernatenormal.HibernateSession;
-import redJpa.entities.Usuario;
+import jpa.entities.Usuario;
 public class PruebaHbiernate {
  
 //Prueba sencilla, persiste una nueva entidad

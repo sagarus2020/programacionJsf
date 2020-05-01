@@ -1,10 +1,10 @@
-package redJpa.entities;
+package jpa.entities;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import redJpa.util.Conexion;
+import mensaje.util.Conexion;
 
 public class prueba {
 	public static void main(String[] args) {

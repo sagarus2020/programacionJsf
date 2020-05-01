@@ -1,4 +1,4 @@
-package redJpa.util;
+package jpa.util;
 
 
 import javax.persistence.EntityManagerFactory;

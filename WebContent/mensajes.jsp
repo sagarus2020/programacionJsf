@@ -14,25 +14,16 @@
 <jsp:useBean id="mDao" class="jpa.Dao.MensajeDao" scope="request"/> 
 <table>
 <tr>
-<th>Nombre
-</th>
-<th>Email
-</th>
+<th>Nombre</th>
+<th>Email</th>
 </tr>
-<c:forEach var="m" items="${ m.getNombre()} ">
-</table>
-<%
-List listado=mDao.listar();
-for(int i=0;i=listado.size();i++){
-	Mensaje m=(Mensaje)listado.get(i);
-
-%>
+<c:forEach var="m" items="${ mDao.listar()} }">
 <tr>
-<td><c: out value= "${ m.getNombre()} "/>
-<td><c: out value= "${ m.getEmail()} "/>
-
-
+<td><c: out value= "${ m.Nombre} "/>
+<td><c: out value= "${ m.Email} "/>
 </tr>
-<%} %>
+</table>
+</c:forEach>
+
 </body>
 </html>

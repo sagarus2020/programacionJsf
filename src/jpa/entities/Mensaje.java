@@ -2,7 +2,7 @@ package jpa.entities;
 
 
 import java.io.Serializable;
-import redJpa.dao.MensajeDao;
+import mensaje.Dao.MensajeDao;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,10 +35,10 @@ public class Mensaje implements Serializable {
 	private String mensaje;
 	private Usuario usuario;
 	MensajeDao mdao=new MensajeDao();
-	public String getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(String usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 	
