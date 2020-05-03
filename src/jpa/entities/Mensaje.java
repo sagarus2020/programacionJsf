@@ -1,79 +1,94 @@
 package jpa.entities;
 
-
 import java.io.Serializable;
-import mensaje.Dao.MensajeDao;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+
+/**
+ * The persistent class for the mensaje database table.
+ * 
+ */
 @Entity
-@Table(name="mensaje")
+@NamedQuery(name="Mensaje.findAll", query="SELECT m FROM Mensaje m")
 public class Mensaje implements Serializable {
-	
-	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * 
-	 */
-
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer    id;
-	
-	private String nombre;	
+	private int id;
+
 	private String email;
+
+	private String ip;
+
+	private String navegador;
+
+	private String nombre;
+
 	private String website;
-	private String mensaje;
-	private Usuario usuario;
-	MensajeDao mdao=new MensajeDao();
-	public Usuario getUsuario() {
-		return usuario;
+
+	//bi-directional many-to-one association to Campana
+	@ManyToOne
+	@JoinColumn(name="id")
+	private Campana campana;
+
+	public Mensaje() {
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	
+
 	public int getId() {
-		return id;
+		return this.id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getWebsite() {
-		return website;
+
+	public String getIp() {
+		return this.ip;
 	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getNavegador() {
+		return this.navegador;
+	}
+
+	public void setNavegador(String navegador) {
+		this.navegador = navegador;
+	}
+
+	public String getNombre() {
+		return this.nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getWebsite() {
+		return this.website;
+	}
+
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-	public String getMensaje() {
-		return mensaje;
+
+	public Campana getCampana() {
+		return this.campana;
 	}
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
+
+	public void setCampana(Campana campana) {
+		this.campana = campana;
 	}
-	
-	
-	
-}	
+
+}

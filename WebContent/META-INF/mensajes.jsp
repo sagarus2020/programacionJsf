@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>Listado de mensajes</h1>
-<jsp:useBean id="mDao" class="jpa.Dao.MensajeDao" scope="request"/> 
+<jsp:useBean id="mDao" class="mensaje.Dao.MensajeDao" scope="request"/> 
 <table>
 <tr>
 <th>Nombre</th>
