@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"><!-- Basic -->
+<html lang="en"
+ 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta charset="utf-8"name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" content="IE=edge">
+
    
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -56,11 +62,10 @@
 				</button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="index.html">Home</a></li>
-                        <li><a class="nav-link" href="about.html">Aboutus</a></li>
-                        <li><a class="nav-link" href="cycv.html">create your cv</a></li>
-						<li><a class="nav-link" href="contact.html">Contact Us</a></li>
-						<li><a class="nav-link active" style="background:#fff;color:#000;" href="contact.html">Sinup now</a></li>
+                        <li><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li><a class="nav-link" href="about.html">Actualizar</a></li>
+                        <li><a class="nav-link" href="cycv.html">Eliminar</a></li>
+                        <li><a class="nav-link" href="contact.html">Contactar</a></li>
 					</ul>
                 </div>
 				<div class="search-box">
@@ -98,31 +103,38 @@
 					  <div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+								<input type="text"  value="@{mensaje.nombre}" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
 								<div class="help-block with-errors"></div>
 							</div>                                 
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+								<input type="text" value="@{mensaje.email}" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+								<div class="help-block with-errors"></div>
+							</div> 
+						</div>
+						
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="text" value="@{mensaje.ip}" placeholder="Your ip" id="ip" class="form-control" name="ip" required data-error="Please enter your number">
 								<div class="help-block with-errors"></div>
 							</div> 
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input type="text" placeholder="Your number" id="number" class="form-control" name="number" required data-error="Please enter your number">
+								<input type="text"  placeholder="Your direction" value="@{mensaje.navegador}"  id="navegador" class="form-control" name="navegador" required data-error="Please enter your number">
 								<div class="help-block with-errors"></div>
 							</div> 
 						</div>
 						<div class="col-md-12">
 							<div class="form-group"> 
-								<textarea class="form-control" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required></textarea>
+								<input class="form-control" value="@{mensaje.mensaje}" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required cols="">
+								
 								<div class="help-block with-errors"></div>
 							</div>
 							<div class="submit-button text-center">
-								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
-								<div id="msgSubmit" class="h3 text-center hidden"></div> 
-								<div class="clearfix"></div> 
+								<button action="MensajeBean.guardar(c)" value="Guardar"class="btn btn-common" id="submit" type="submit">Send Message</button>
+								
 							</div>
 						</div>
 					  </div>            
@@ -237,11 +249,9 @@
 		      <div class="col-12">
 			    <p class="crp">© 2019 RD resume . All Rights Reserved.</p>
 				<ul class="bottom_menu">
-				   <li><a href="#">About Us</a></li>
-				   <li><a href="#">Find jobs</a></li>
+				  
 				   <li><a href="contact.html">Contact us</a></li>
-				   <li><a href="#">Terms of Service</a></li>
-				   <li><a href="#">Privacy</a></li>
+				 
 				</ul>
 			  </div>
 		   </div>

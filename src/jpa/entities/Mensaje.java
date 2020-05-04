@@ -25,7 +25,7 @@ public class Mensaje implements Serializable {
 
 	private String nombre;
 
-	private String website;
+	private String mensaje;
 
 	//bi-directional many-to-one association to Campana
 	@ManyToOne
@@ -75,12 +75,14 @@ public class Mensaje implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getWebsite() {
-		return this.website;
+	
+
+	public String getMensaje() {
+		return mensaje;
 	}
 
-	public void setWebsite(String website) {
-		this.website = website;
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
 	}
 
 	public Campana getCampana() {
